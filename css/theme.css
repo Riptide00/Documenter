@@ -1,0 +1,82 @@
+body {
+    background-color: black;
+    text-align:  center;
+    color: white;
+    font-family: Consolas, monaco, monospace;
+}
+
+h1, h2 {
+    text-decoration: underline;
+}
+
+.module, .function, .builtin, .class h2{
+    text-align: left;
+}
+
+.module, .function, .builtin, .class {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+.module, .function, .builtin {
+    background-color: white;
+    color: black;
+}
+
+.class {
+    background-color: grey;
+    color: black;
+} 
+
+.class {
+    background-color: grey
+    padding:10px;
+}
+
+.error {
+    color: red;
+}
+
+#navigation {
+    border: 2px solid black;
+    border-radius: 30px;
+    margin-left: 20px;
+    padding: 20px;
+    float: left;
+    width: 90%;
+    background-color: lightgrey;
+    color: black;
+}
+
+#navigation li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+#navigation a {
+    color: blue;
+}
+
+footer {
+    float: bottom-center;
+    width: 80%;
+    height: 160px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    background-color: grey;
+    color: black;
+    padding: 50px;
+    padding-bottom: -100px;
+    margin-left: 5%;
+}
+
+footer a {
+    color: blue;
+    text-decoration: none;
+}
