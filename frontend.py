@@ -31,9 +31,11 @@ def navigation():
 
 
 def footer():
-    """Returna footer."""
-    footer = '<img src="/bottle.png"></img><br>'
-    footer += 'Powered by <a href="http://bottlepy.org">Bottle.py</a>'
+    """Return a footer."""
+    footer = htmllib.tag('img', '', {'src': '/bottle.png'})
+    footer += htmllib.tag_open('br')
+    link = htmllib.tag('a', 'Bottle.py', {'href': 'http://bottlepy.org'})
+    footer += htmllib.tag('p', 'Powered by ' + link)
     return htmllib.tag('footer', footer)
 
 
