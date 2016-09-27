@@ -3,6 +3,8 @@ import inspect
 import htmllib
 import conf
 
+EXCLUDE_PRIVATE = conf.EXCLUDE_PRIVATE
+
 
 def describe_builtin(obj):
     """Describe a builtin function."""
@@ -118,7 +120,7 @@ def _isprivate(name):
 def _inspect(obj, name, method=False):
     """Inspect object passed by getattr."""
     ret = ""
-    if conf.EXCLUDE_PRIVATE:
+    if EXCLUDE_PRIVATE:
         if _isprivate(name):
             return ""
     if inspect.isclass(obj):

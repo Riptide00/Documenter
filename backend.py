@@ -1,12 +1,15 @@
-"""Webface backend."""
+"""Documenter backend."""
 import bottle
 import os
 import css_extractor as ce
 import conf
 
+DEFAULT_HOST = conf.DEFAULT_HOST
+DEFAULT_PORT = conf.DEFAULT_PORT
 
-def webface_console(frontend):
-    """Webface terminal."""
+
+def documenter_backend_console(frontend):
+    """Documenter terminal."""
     help_txt = "Commands\n--------\n"
     help_txt += "h    | Help prompt.\n"
     help_txt += "css  | Generate css skeleton for current frontend.\n"
@@ -27,7 +30,7 @@ def webface_console(frontend):
                     h = input("Host: ").strip(" ")
                     if not h:
                         print('Using default host.')
-                        h = conf.DEFAULT_HOST
+                        h = DEFAULT_HOST
                     print("Host set to " + h)
                     p = input('Port: ').strip(' ')
                     if p:
@@ -35,10 +38,10 @@ def webface_console(frontend):
                             p = int(p)
                         except ValueError:
                             print("Value error, using default port.")
-                            p = conf.DEFAULT_PORT
+                            p = DEFAULT_PORT
                     else:
                         print("Default port used.")
-                        p = conf.DEFAULT_PORT
+                        p = DEFAULT_PORT
                     print("Port set to " + str(p))
                     bottle.run(host=h, port=p)
                 elif com == "css":
@@ -56,6 +59,6 @@ def webface_console(frontend):
 
 
 def leave():
-    """Close Webface terminal."""
-    print("\nWebface shutting down...\n")
+    """Close Documenter terminal."""
+    print("\nDocumenter shutting down...\n")
     exit()

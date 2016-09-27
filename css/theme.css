@@ -14,8 +14,7 @@ h1, h2 {
 }
 
 .module, .function, .builtin, .class {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 5%;
     margin-bottom: 20px;
     margin-top: 20px;
     padding: 20px;
@@ -39,22 +38,41 @@ h1, h2 {
 }
 
 .error {
+    text-decoration: underline;
     color: red;
 }
 
-#navigation {
+#navigation{
     border: 2px solid black;
     border-radius: 30px;
-    margin-left: 20px;
+    width: 90%;
+    margin-left: 2.5%;
     padding: 20px;
     float: left;
-    width: 90%;
     background-color: lightgrey;
     color: black;
 }
 
+#navigation ul {
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 90%;
+    margin-left: 2.5%;
+    padding: 20px;
+    float: left;
+    background-color: white;
+    color: black;
+}
+
+#navigation p {
+    position: relative;
+    color: black;
+    text-decoration: underline;
+    float: center;
+}
+
 #navigation li {
-    display: inline;
+    display: inline-block;
     list-style-type: none;
     padding-right: 20px;
 }
@@ -65,7 +83,7 @@ h1, h2 {
 
 footer {
     float: bottom-center;
-    width: 80%;
+    width: 90%;
     height: 160px;
     border-top-left-radius: 150px;
     border-top-right-radius: 150px;
@@ -73,7 +91,7 @@ footer {
     color: black;
     padding: 50px;
     padding-bottom: -100px;
-    margin-left: 5%;
+    margin-left: 2.5%;
 }
 
 footer a {
