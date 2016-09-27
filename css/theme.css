@@ -59,7 +59,6 @@ h1, h2 {
 }
 
 #navigation p {
-    position: relative;
     color: black;
     text-decoration: underline;
     float: center;

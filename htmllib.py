@@ -69,7 +69,7 @@ def tag_open(tag: str, tag_properties: dict=None):
         ret += " "
         for tag_property_key in tag_properties.keys():
             ret += (str(tag_property_key) + '="' +
-                    str(tag_properties.get(tag_property_key)) + '" ')
+                    str(tag_properties.get(tag_property_key)) + '"')
     ret += '>'
     return ret
 

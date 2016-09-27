@@ -25,17 +25,6 @@ def error(text):
 def navigation():
     """Return a navigation bar based on installed packages."""
     nav = ""
-    if SHOW_INSTALLED:
-        # Get installed packages.
-        installed_packages = pip.get_installed_distributions()
-        list_installed = ""
-        for i in installed_packages:
-            itm = str(i.key) + " " + str(i.version)
-            link = htmllib.tag('a', itm, {'href': '/' + i.key})
-            list_installed += htmllib.tag('li', link)
-        installed = htmllib.tag('p', 'Installed packages')
-        installed += htmllib.tag('ul', list_installed)
-        nav += installed
     if SHOW_BUILTIN:
         # Get builtin packages.
         builtin_packages = ""
@@ -49,6 +38,17 @@ def navigation():
         builtin = htmllib.tag('p', 'Builtin packages')
         builtin += htmllib.tag('ul', list_builtin)
         nav += builtin
+    if SHOW_INSTALLED:
+        # Get installed packages.
+        installed_packages = pip.get_installed_distributions()
+        list_installed = ""
+        for i in installed_packages:
+            itm = str(i.key) + " " + str(i.version)
+            link = htmllib.tag('a', itm, {'href': '/' + i.key})
+            list_installed += htmllib.tag('li', link)
+        installed = htmllib.tag('p', 'Installed packages')
+        installed += htmllib.tag('ul', list_installed)
+        nav += installed
     return htmllib.tag('div', nav, {'id': 'navigation'})
 
 
