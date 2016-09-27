@@ -11,8 +11,7 @@ class HTMLPage(object):
 
     def add_content(self, content):
         """Add content to a page."""
-        bt = tag_open('br')
-        content = content.replace("\n", bt)
+        content = content.replace("\n", tag_open('br'))
         self._contents += content
 
     def add_head(self, content):

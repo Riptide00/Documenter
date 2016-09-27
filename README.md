@@ -14,13 +14,15 @@
 
 ## Use
 
+    > python main.py
+
 Commands
---------
-h    | Help prompt.
-css  | Generate css skeleton for current frontend.(development)
-host | Host current frontend.
-cls  | Clear terminal.
-exit | Exit application.
+
+	h    | Help prompt.
+	css  | Generate css skeleton for current frontend.(development)
+	host | Host current frontend.
+	cls  | Clear terminal.
+	exit | Exit application.
 
 ## Todo
 
