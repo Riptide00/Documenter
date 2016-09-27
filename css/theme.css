@@ -1,5 +1,5 @@
 body {
-    background-color: grey;
+    background-color: lightgrey;
     color: black;
     text-align:  center;
     font-family: Consolas, monaco, monospace;
@@ -27,7 +27,7 @@ h1, h2 {
 }
 
 .module {
-    background-color: white
+    background-color: grey;
     color: black;
 }
 
@@ -79,7 +79,7 @@ footer {
     float: bottom-center;
     width: 90%;
     height: 160px;
-    background-color: grey;
+    background-color: lightgrey;
     color: black;
     padding: 50px;
     margin-left: 2.5%;
