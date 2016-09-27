@@ -1,7 +1,7 @@
 body {
-    background-color: black;
+    background-color: grey;
+    color: black;
     text-align:  center;
-    color: white;
     font-family: Consolas, monaco, monospace;
 }
 
@@ -9,8 +9,11 @@ h1, h2 {
     text-decoration: underline;
 }
 
-.module, .function, .builtin, .class h2{
+.module, .function, .builtin, .class {
     text-align: left;
+    color: black;
+    padding: 10px;
+    background-color: rgba(0,0,0,.2);
 }
 
 .module, .function, .builtin, .class {
@@ -22,19 +25,9 @@ h1, h2 {
     border-radius: 30px;
 }
 
-.module, .function, .builtin {
-    background-color: white;
+.module {
+    background-color: white
     color: black;
-}
-
-.class {
-    background-color: grey;
-    color: black;
-} 
-
-.class {
-    background-color: grey
-    padding:10px;
 }
 
 .error {
@@ -47,6 +40,7 @@ h1, h2 {
     border-radius: 30px;
     width: 90%;
     margin-left: 2.5%;
+    margin-bottom: 20px;
     padding: 20px;
     float: left;
     background-color: lightgrey;
@@ -85,12 +79,9 @@ footer {
     float: bottom-center;
     width: 90%;
     height: 160px;
-    border-top-left-radius: 150px;
-    border-top-right-radius: 150px;
     background-color: grey;
     color: black;
     padding: 50px;
-    padding-bottom: -100px;
     margin-left: 2.5%;
 }
 
