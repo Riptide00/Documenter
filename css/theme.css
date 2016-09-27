@@ -9,7 +9,7 @@ h1, h2 {
     text-decoration: underline;
 }
 
-.module, .function, .builtin, .class {
+.function, .builtin, .class {
     text-align: left;
     color: black;
     padding: 10px;
@@ -17,7 +17,8 @@ h1, h2 {
 }
 
 .module, .function, .builtin, .class {
-    margin-left: 5%;
+    margin-left: 2.5%;
+    width: 90%;
     margin-bottom: 20px;
     margin-top: 20px;
     padding: 20px;

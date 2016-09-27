@@ -93,7 +93,7 @@ def describe_module(module):
     ret += htmllib.tag('h2', 'Documentation')
     docstring = str(module.__doc__)
     ret += htmllib.tag('p', docstring)
-    return ret
+    return htmllib.tag('div', ret, {'class': 'module'})
 
 
 def document(module):
