@@ -79,7 +79,6 @@ errno
 ctypes
 threading
 multiprocessing
-The concurrent package
 concurrent.futures
 subprocess 
 sched 
@@ -164,7 +163,6 @@ tkinter
 tkinter.ttk 
 tkinter.tix
 tkinter.scrolledtext
-IDLE
 typing 
 pydoc
 doctest
