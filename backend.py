@@ -1,7 +1,7 @@
 """Documenter backend."""
 import bottle
 import os
-import css_extractor as ce
+import lib.css_extractor as ce
 import conf
 
 DEFAULT_HOST = conf.DEFAULT_HOST

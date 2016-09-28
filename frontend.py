@@ -1,7 +1,7 @@
 """Webface frontend."""
 import bottle
-import htmllib
-import documenter as doc
+import lib.htmllib as htmllib
+import lib.documenter as doc
 import importlib
 import pip
 import conf
@@ -12,8 +12,10 @@ SHOW_BUILTIN = conf.SHOW_BUILTIN
 STYLE = htmllib.tag_open('link', {'href': '/theme.css',
                                   'rel': 'stylesheet',
                                   'type': 'text/css'})
-ICON = htmllib.tag_open('link', {'rel': 'icon', 'href': 'favicon.ico'})
-PAGES = ['document_webface']
+ICON = htmllib.tag_open('link', {'rel': 'icon', 'href': '/favicon.ico'})
+PAGES = ['document_module']
+
+_NAV = None
 
 
 def error(text):
@@ -24,32 +26,37 @@ def error(text):
 
 def navigation():
     """Return a navigation bar based on installed packages."""
-    nav = ""
-    if SHOW_BUILTIN:
-        # Get builtin packages.
-        builtin_packages = ""
-        with open('builtin_manual.txt') as f:
-            builtin_packages = f.readlines()
-        list_builtin = ""
-        for i in builtin_packages:
-            i = i.strip(" ").strip("\n")
-            link = htmllib.tag('a', i, {'href': '/' + i})
-            list_builtin += htmllib.tag('li', link)
-        builtin = htmllib.tag('p', 'Builtin packages')
-        builtin += htmllib.tag('ul', list_builtin)
-        nav += builtin
-    if SHOW_INSTALLED:
-        # Get installed packages.
-        installed_packages = pip.get_installed_distributions()
-        list_installed = ""
-        for i in installed_packages:
-            itm = str(i.key) + " " + str(i.version)
-            link = htmllib.tag('a', itm, {'href': '/' + i.key})
-            list_installed += htmllib.tag('li', link)
-        installed = htmllib.tag('p', 'Installed packages')
-        installed += htmllib.tag('ul', list_installed)
-        nav += installed
-    return htmllib.tag('div', nav, {'id': 'navigation'})
+    global _NAV
+    if _NAV:
+        return _NAV
+    else:
+        nav = ""
+        if SHOW_BUILTIN:
+            # Get builtin packages.
+            builtin_packages = ""
+            with open('builtin_list.txt') as f:
+                builtin_packages = f.readlines()
+            list_builtin = ""
+            for i in builtin_packages:
+                i = i.strip(" ").strip("\n")
+                link = htmllib.tag('a', i, {'href': '/' + i})
+                list_builtin += htmllib.tag('li', link)
+            builtin = htmllib.tag('p', 'Builtin packages')
+            builtin += htmllib.tag('ul', list_builtin)
+            nav += builtin
+        if SHOW_INSTALLED:
+            # Get installed packages.
+            installed_packages = pip.get_installed_distributions()
+            list_installed = ""
+            for i in installed_packages:
+                itm = str(i.key) + " " + str(i.version)
+                link = htmllib.tag('a', itm, {'href': '/' + i.key})
+                list_installed += htmllib.tag('li', link)
+            installed = htmllib.tag('p', 'Installed packages')
+            installed += htmllib.tag('ul', list_installed)
+            nav += installed
+            _NAV = htmllib.tag('div', nav, {'id': 'navigation'})
+        return _NAV
 
 
 def footer():
@@ -80,7 +87,7 @@ def favicon():
 
 
 @bottle.route('<module:path>')
-def document_webface(module='/random'):
+def document_module(module='/random'):
     """Display documenter in webface w/ dynamicly looked up modules."""
     page = htmllib.HTMLPage()
     page.add_head(STYLE)
